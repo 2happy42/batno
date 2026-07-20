@@ -3,5 +3,31 @@ name = "batno"
 version = "0.1.0"
 edition = "2024"
 
+authors = ["2happy42"]
+description = "A lightweight Linux battery monitor that sends notifications only once until the battery has recharged."
+license = "MIT"
+repository = "https://github.com/2happy42/batno"
+homepage = "https://github.com/2happy42/batno"
+documentation = "https://docs.rs/batno"
+readme = "README.md"
+
+keywords = [
+    "battery",
+    "linux",
+    "notification",
+    "daemon",
+    "power",
+]
+
+categories = [
+    "command-line-utilities",
+    "os::linux-apis",
+]
+
+exclude = [
+    ".github/",
+    ".git/",
+]
+
 [dependencies]
 clap = { version = "4.6.2", features = ["derive"] }
