@@ -192,4 +192,7 @@ Possible future improvements include:
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+Copyright (c) 2026 2happy42
+
+This project is licensed under the GNU Affero General Public License v3.0 or later.
+See the LICENSE file for details.

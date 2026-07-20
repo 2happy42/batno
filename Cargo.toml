@@ -5,7 +5,7 @@ edition = "2024"
 
 authors = ["2happy42"]
 description = "A lightweight Linux battery monitor that sends notifications only once until the battery has recharged."
-license = "MIT"
+license = "AGPL-3.0-or-later"
 repository = "https://github.com/2happy42/batno"
 homepage = "https://github.com/2happy42/batno"
 documentation = "https://docs.rs/batno"
