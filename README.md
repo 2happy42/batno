@@ -158,6 +158,158 @@ If you installed BatNo with Cargo:
 cargo uninstall batno
 ```
 
+
+## Running BatNo as a background service
+
+BatNo can run continuously in the background using a user-level `systemd` service.
+
+The service starts automatically when you enter your graphical desktop session and keeps monitoring your battery without requiring a terminal window to stay open.
+
+### Install the background service
+
+Run:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/install-service.sh | bash
+```
+
+The installer will:
+
+1. Find the installed `batno` executable in your `PATH`.
+2. Verify that the executable is a valid BatNo installation by running:
+
+```bash
+batno --version
+```
+
+3. Display the detected installation path and version.
+4. Ask you to confirm that this is the correct BatNo installation.
+5. Ask for the monitoring configuration:
+   - Notification threshold
+   - Reset threshold
+   - Monitoring interval
+6. Create a user-level systemd service.
+7. Enable and start the service.
+
+Example:
+
+```text
+Found BatNo:
+  Path:    /home/user/.local/bin/batno
+  Version: batno 1.0.0
+
+Is this the correct BatNo installation? [y/N] y
+
+Notification threshold [%] (default 20): 20
+Reset threshold [%] (default 25): 25
+Monitoring interval in seconds (default 30): 30
+```
+
+### How the service works
+
+The service is installed as a **user systemd service**:
+
+```text
+~/.config/systemd/user/batno.service
+```
+
+It runs only for the current user and does not require administrator privileges.
+
+The service:
+
+- Starts automatically when the user enters their graphical desktop session.
+- Runs BatNo in the background.
+- Restarts automatically if BatNo exits unexpectedly.
+- Uses the thresholds and interval configured during installation.
+
+The generated service executes BatNo similar to:
+
+```bash
+batno \
+    --notify-threshold 20 \
+    --reset-threshold 25 \
+    --monitor-interval 30
+```
+
+### Managing the service
+
+Check the current status:
+
+```bash
+systemctl --user status batno
+```
+
+Stop the service:
+
+```bash
+systemctl --user stop batno
+```
+
+Start the service:
+
+```bash
+systemctl --user start batno
+```
+
+Restart the service after changing settings:
+
+```bash
+systemctl --user restart batno
+```
+
+View service logs:
+
+```bash
+journalctl --user -u batno
+```
+
+### Remove the background service
+
+To stop BatNo from running automatically:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/uninstall-service.sh | bash
+```
+
+This will:
+
+- Stop the running BatNo service.
+- Disable automatic startup.
+- Remove the systemd service file.
+- Reload the user systemd configuration.
+
+The BatNo executable itself is **not removed**. You can still run it manually with:
+
+```bash
+batno
+```
+
+### Security and privacy considerations
+
+The service runs with the same permissions as your user account.
+
+This means:
+
+- BatNo can access anything that your user account can access.
+- The service does not run with administrator privileges.
+- Installing the service does not require `sudo`.
+- Removing the service does not remove the BatNo binary.
+
+The installer creates a systemd service file containing the exact path to the BatNo executable and the configured command-line arguments. Review the generated service file if you want to verify the configuration:
+
+```bash
+cat ~/.config/systemd/user/batno.service
+```
+
+Only install service scripts from sources you trust. A script executed through:
+
+```bash
+curl ... | bash
+```
+
+runs with your user permissions and should always be reviewed before use if downloaded from an unknown source.
+
+
 ## Usage
 
 Run with default settings:
