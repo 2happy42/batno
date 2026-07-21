@@ -371,6 +371,8 @@ Once these are implemented, a platform-specific constructor can create a `Batter
 
 Contributions are welcome.
 
+Before contributing, please read the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 If you'd like to contribute:
 
 1. Fork the repository.
