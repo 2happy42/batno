@@ -75,7 +75,7 @@ After=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=$BATNO_PATH --notify-threshold $NOTIFY_THRESHOLD --reset-threshold $RESET_THRESHOLD --monitor-interval $MONITOR_INTERVAL
+ExecStart="$BATNO_PATH" --notify-threshold "$NOTIFY_THRESHOLD" --reset-threshold "$RESET_THRESHOLD" --monitor-interval "$MONITOR_INTERVAL"
 Restart=on-failure
 RestartSec=5
 
