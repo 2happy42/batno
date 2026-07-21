@@ -25,10 +25,12 @@ categories = [
     "os::linux-apis",
 ]
 
-exclude = [
-    ".github/",
-    ".git/",
-    "*.sh"
+include = [
+    "src/**",
+    "Cargo.toml",
+    "Cargo.lock",
+    "README.md",
+    "LICENSE",
 ]
 
 [dependencies]
