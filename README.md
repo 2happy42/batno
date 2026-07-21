@@ -172,7 +172,7 @@ The service starts automatically when you enter your graphical desktop session a
 Run:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/install-service.sh | bash
+bash <(curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/install-service.sh)
 ```
 
 The installer will:
