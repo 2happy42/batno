@@ -163,6 +163,8 @@ cargo uninstall batno
 
 BatNo can run continuously in the background using a user-level `systemd` service.
 
+This requires `systemd` user services (i.e. `systemctl --user` must work in your session).
+
 The service starts automatically when you enter your graphical desktop session and keeps monitoring your battery without requiring a terminal window to stay open.
 
 ### Install the background service
