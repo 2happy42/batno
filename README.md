@@ -68,6 +68,42 @@ Battery: 20%  -> Notification sent again
 
 ## Installation
 
+### One-line installer (recommended)
+
+Install the latest release:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/install.sh | bash
+```
+
+By default, BatNo is installed to `~/.local/bin`.
+
+If `~/.local/bin` is not on your `PATH`, the installer will let you know and print the command you should add to your shell startup file (e.g. `~/.bashrc` or `~/.zshrc`).
+
+### Custom installation
+
+The installer can be customized using environment variables.
+
+Install a specific release:
+
+```bash
+VERSION=v1.2.3 curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/install.sh | bash
+```
+
+Install to a different directory:
+
+```bash
+INSTALL_DIR="$HOME/bin" curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/install.sh | bash
+```
+
+Install a specific version to a custom directory:
+
+```bash
+VERSION=v1.2.3 INSTALL_DIR="$HOME/bin" \
+curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/install.sh | bash
+```
+
+
 ### From crates.io
 
 ```bash
@@ -79,7 +115,7 @@ cargo install batno
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/batno.git
+git clone https://github.com/2happy42/batno.git
 cd batno
 ```
 
@@ -96,6 +132,22 @@ cargo run --release
 ```
 
 ---
+
+### Uninstall
+
+If you installed BatNo using the installer script:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/uninstall.sh | bash
+```
+
+> **Note:** The uninstall script will remove only the installed `batno` binary. It will not modify your shell configuration or remove directories such as `~/.local/bin`.
+
+If you installed BatNo with Cargo:
+
+```bash
+cargo uninstall batno
+```
 
 ## Usage
 
