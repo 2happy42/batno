@@ -150,7 +150,7 @@ impl BatteryProvider for LinuxBattery {
             "Discharging" => Ok(BatteryStatus::Discharging),
             "Charging" => Ok(BatteryStatus::Charging),
             "Full" => Ok(BatteryStatus::Idle),
-            "Not Charging" => Ok(BatteryStatus::Idle),
+            "Not charging" => Ok(BatteryStatus::Idle),
             _ => Ok(BatteryStatus::Unknown),
         }
     }
