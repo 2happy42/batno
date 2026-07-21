@@ -347,10 +347,12 @@ batno --battery-info
 
 | Option | Default | Description |
 |---------|---------|-------------|
-| `--monitor-interval` | `30` | Time between battery checks in seconds |
-| `--notify-threshold` | `20` | Battery percentage that triggers a notification |
-| `--reset-threshold` | `25` | Battery percentage required before another notification can be sent |
-| `--battery-info` | `false` | Prints battery information instead of monitoring |
+| `-m`, `--monitor-interval <SECONDS>` | `30` | The interval, in seconds, at which the program checks the battery |
+| `-n`, `--notify-threshold <PERCENTAGE>` | `20` | The battery percentage at or below which the program sends a notification |
+| `-r`, `--reset-threshold <PERCENTAGE>` | `25` | The battery percentage that must be reached while charging before another low-battery notification can be sent |
+| `-b`, `--battery-info` | `false` | Outputs information about the battery |
+| `-h`, `--help` | | Prints help information |
+| `-V`, `--version` | | Prints the installed BatNo version |
 
 ---
 
@@ -416,4 +418,4 @@ Possible future improvements include:
 Copyright (c) 2026 2happy42
 
 This project is licensed under the GNU Affero General Public License v3.0 or later.
-See the LICENSE file for details.
+See the [LICENSE](LICENSE) file for details.
