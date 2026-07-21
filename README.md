@@ -133,7 +133,7 @@ cargo run --release
 
 ---
 
-### Uninstall
+## Uninstall
 
 If you installed BatNo using the installer script:
 
