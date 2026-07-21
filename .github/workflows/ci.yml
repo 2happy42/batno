@@ -11,7 +11,7 @@ env:
 
 jobs:
   checks:
-    name: Build, Test, Format, Clippy, Audit
+    name: Build, Test, Format, Clippy
     runs-on: ubuntu-latest
 
     steps:
