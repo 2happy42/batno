@@ -141,7 +141,14 @@ If you installed BatNo using the installer script:
 curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/uninstall.sh | bash
 ```
 
-> **Note:** The uninstall script will remove only the installed `batno` binary. It will not modify your shell configuration or remove directories such as `~/.local/bin`.
+If you installed BatNo to a custom directory, specify the same `INSTALL_DIR` that was used during installation:
+
+```bash
+INSTALL_DIR="$HOME/bin" \
+curl -fsSL https://raw.githubusercontent.com/2happy42/batno/main/uninstall.sh | bash
+```
+
+> **Note:** The uninstall script removes only the `batno` binary. It does not modify your shell configuration or remove the installation directory.
 
 If you installed BatNo with Cargo:
 
