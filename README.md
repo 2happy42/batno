@@ -1,6 +1,6 @@
 # BatNo
 
-[![Rust Tests](https://github.com/2happy42/batno/actions/workflows/rust.yml/badge.svg)](https://github.com/2happy42/batno/actions/workflows/rust.yml)
+[![CI](https://github.com/2happy42/batno/actions/workflows/ci.yml/badge.svg)](https://github.com/2happy42/batno/actions/workflows/ci.yml)
 [![Release](https://github.com/2happy42/batno/actions/workflows/release.yml/badge.svg)](https://github.com/2happy42/batno/actions/workflows/release.yml)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Rust](https://img.shields.io/badge/rust-stable-orange.svg)](https://www.rust-lang.org/)
