@@ -47,6 +47,25 @@ RESET_THRESHOLD="${RESET_THRESHOLD:-25}"
 read -rp "Monitoring interval in seconds (default 30): " MONITOR_INTERVAL
 MONITOR_INTERVAL="${MONITOR_INTERVAL:-30}"
 
+if ! [[ "$NOTIFY_THRESHOLD" =~ ^[0-9]+$ ]] || (( NOTIFY_THRESHOLD > 100 )); then
+  echo "Error: Notification threshold must be an integer between 0 and 100."
+  exit 1
+fi
+
+if ! [[ "$RESET_THRESHOLD" =~ ^[0-9]+$ ]] || (( RESET_THRESHOLD > 100 )); then
+  echo "Error: Reset threshold must be an integer between 0 and 100."
+  exit 1
+fi
+
+if (( RESET_THRESHOLD <= NOTIFY_THRESHOLD )); then
+  echo "Error: Reset threshold must be greater than notification threshold."
+  exit 1
+fi
+
+if ! [[ "$MONITOR_INTERVAL" =~ ^[0-9]+$ ]] || (( MONITOR_INTERVAL < 1 )); then
+  echo "Error: Monitoring interval must be an integer greater than 0."
+  exit 1
+fi
 mkdir -p "$SERVICE_DIR"
 
 cat >"$SERVICE_FILE" <<EOF
